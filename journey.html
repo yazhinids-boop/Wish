@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Journey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom, #fef6fb, #e0f7fa);
+      color: #444;
+    }
+
+    h2 {
+      font-family: 'Great Vibes', cursive;
+      text-align: center;
+      font-size: 3rem;
+      margin: 2rem 1rem;
+      color: #c084fc;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 3rem;
+      max-width: 1000px;
+      margin: 0 auto 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .memory-card {
+      position: relative;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      padding-top: 220px; /* Space for the hanging image */
+      transition: transform 0.3s ease;
+    }
+
+    .memory-card:hover {
+      transform: scale(1.03);
+    }
+
+    .memory-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 160px;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      transform: translateX(-50%);
+      border: 4px solid white;
+    }
+
+    /* Simulated string */
+    .memory-card::after {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 20px;
+      background: #888;
+    }
+
+    /* Pin or tape dot */
+    .pin {
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 12px;
+      background: #c084fc;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 2;
+    }
+
+    .memory-content {
+      padding: 1rem 1.2rem;
+    }
+
+    .memory-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #a855f7;
+    }
+
+    .memory-text {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 3rem auto;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(to right, #fbcfe8, #c4b5fd);
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #333;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(251, 207, 232, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(251, 207, 232, 0.6);
+    }
+    .loading-buffer {
+  text-align: center;
+  margin: 2rem 0 4rem 0;
+  color: #a855f7;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #c084fc;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+.dot:nth-child(3) {
+  animation-delay: 0;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  } 40% {
+    transform: scale(1);
+  }
+}
+
+
+    /* Assign images via custom classes */
+    .snapchat::before { background-image: url('snapchat.jpg'); }
+    .corridor::before { background-image: url('fifth.jpg'); }
+    .bus::before { background-image: url('eight.jpg'); }
+    .beach::before { background-image: url('seven.jpg'); }
+    .birthday::before { background-image: url('six.jpg'); }
+    .proposal::before { background-image: url('ten.jpg'); }
+    .part::before { background-image: url('nine.jpg'); }
+    .movie::before { background-image: url('one.jpg'); }
+    .skip::before { background-image: url('thirteen.jpg'); }
+    .rose::before { background-image: url('fifteen.jpg'); }
+    .drive::before { background-image: url('sixteen.jpg'); }
+
+    .out::before { background-image: url('eleven.jpg'); }
+    .meet::before { background-image: url('four.jpg'); }
+    .love::before { background-image: url('twel.jpg'); }
+    .mov::before { background-image: url('forteen.jpg'); }
+  </style>
+</head>
+<body>
+
+  <h2>Moments That Made Us 💞</h2>
+
+  <div class="grid">
+    <div class="memory-card snapchat">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">Snapchat Vibes 📱</div>
+        <div class="memory-text">It all began with chats, filters, and streaks on Snapchat. Our story sparked digitally as Senior and Junior.</div>
+      </div>
+    </div>
+
+    <div class="memory-card corridor">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">Corridor Meeting ✨</div>
+        <div class="memory-text">That first “hai” in the college corridor turned a casual moment into something unforgettable.</div>
+      </div>
+    </div>
+
+    <div class="memory-card bus">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">That Unexpected Bus Ride 🚌</div>
+        <div class="memory-text">Lost manuals, missed buses, and found memories — you stayed with me when it mattered most.</div>
+      </div>
+    </div>
+
+    <div class="memory-card beach">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">First Hug 🤗</div>
+        <div class="memory-text">I'll never forget our first hug… right there on the college stairs. In that simple moment, everything felt right. That memory still warms my heart every single time.
+
+.</div>
+      </div>
+    </div>
+
+    <div class="memory-card birthday">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">A Sweet Memory 🤣</div>
+        <div class="memory-text">During our semester exams, we snuck away for a little escape to the mall… shared ice cream and just when everything felt perfect — Dad called! 😅 We panicked a bit, but it only made the moment more special (and hilarious!).</div>
+      </div>
+    </div>
+
+<div class="memory-card proposal">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">The Sleepy proposal 😴💞</div>
+        <div class="memory-text">I in the half sleep asked him, "What will you be for me?" as a quiet proposal. We went to the library to talk, but he wasn’t ready then and gently said no. Still, that moment was the start of something real between us.</div>
+      </div>
+  </div>
+
+
+<div class="memory-card part">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">From Us to Miles Apart 😔</div>
+        <div class="memory-text">When it was time to leave, after our exams, my heart felt heavy. You started your new job, and though we were apart, my love stayed with you every step of the way with an hug.</div>
+      </div>
+    </div>
+
+<div class="memory-card movie">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">First Movie 🍿</div>
+        <div class="memory-text">After that, we found time to go to the movies with friends — just enjoying moments together, even if things were still a little uncertain.</div>
+      </div>
+    </div>
+
+<div class="memory-card out">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">outting 😉</div>
+        <div class="memory-text">Our next meet was at Saravan store, a simple shopping trip that made us happy as good friends.</div>
+      </div>
+    </div>
+
+<div class="memory-card meet">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">Surprise meet 💞</div>
+        <div class="memory-text">Next came a surprise meet — he showed up at my friend’s wedding without me knowing. That unexpected moment, with a few little crashes, made it unforgettable.</div>
+      </div>
+    </div>
+
+<div class="memory-card skip">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">Again the feel for love 🫣</div>
+        <div class="memory-text">This time both fallen for love during the movie out with friends which lead being an romantic times.</div>
+      </div>
+    </div>
+
+
+<div class="memory-card love">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">Love 🐼</div>
+        <div class="memory-text">And that’s how our beautiful love journey began — full of surprises and smiles. Soon after, we went on our first love date, a moment that felt like everything around us paused, just for us.</div>
+      </div>
+    </div>
+
+<div class="memory-card mov">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">Movie Time 🎬</div>
+        <div class="memory-text">After that came our movie date — sitting beside each other, sharing popcorn, and stealing glances more than watching the film. It felt like a dream unfolding quietly.</div>
+      </div>
+    </div>
+
+<div class="memory-card rose">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">Rose Day 🌹</div>
+        <div class="memory-text">After that came our movie date — sitting beside each other, sharing popcorn, and stealing glances more than watching the film. It felt like a dream unfolding quietly.</div>
+      </div>
+    </div>
+<div class="memory-card drive">
+      <div class="pin"></div>
+      <div class="memory-content">
+        <div class="memory-title">Drive became meet up 🏫</div>
+        <div class="memory-text">One day, while out for a drive with my father, he suddenly appeared — completely unexpected. I was stunned, unsure what to do. My dad said he’d wait, so I asked him to leave for then, and the two of us went to the park instead. A mix of nerves and smiles filled that moment.</div>
+      </div>
+    </div>
+
+  </div>
+
+<!-- Add this just below the closing </div> of .grid -->
+
+<div class="loading-buffer">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="loading-text">Loading more moments...</span>
+</div>
+
+  <button class="back-btn" onclick="window.location.href='cards.html'">← Back to Home</button>
+
+</body>
+</html>
+	
